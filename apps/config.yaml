@@ -1,0 +1,9 @@
+app:
+  title: "LLM Concurrency Gateway"
+  port: 8000
+  host: "0.0.0.0"
+
+llm:
+  model: "gpt-4o"
+  timeout: 30.0
+  max_concurrent_calls: 20
