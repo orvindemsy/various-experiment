@@ -1,0 +1,27 @@
+{
+  "name": "various-experiments",
+  "build": {
+    "dockerfile": "../dockerfiles/devcontainer/Dockerfile",
+    "context": ".."
+  },
+  "workspaceFolder": "/app",
+  "workspaceMount": "source=${localWorkspaceFolder},target=/app,type=bind,consistency=cached",
+  "mounts": [
+    "source=mlpipe-vscode-extensions-cache-volume,target=/root/.vscode-server/extensions,type=volume"
+  ],
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "ms-python.python",
+        "ms-python.vscode-pylance",
+        "ms-python.black-formatter",
+        "ms-toolsai.jupyter"
+      ]
+    }
+  },
+  "runArgs": [
+        "--env-file",
+        "${localWorkspaceFolder}/.env.local",
+        "--shm-size=4gb"
+  ],
+}
